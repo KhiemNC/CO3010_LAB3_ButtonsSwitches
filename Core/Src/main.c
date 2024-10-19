@@ -160,7 +160,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 7999;
+  htim2.Init.Prescaler = 799;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 9;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -205,7 +205,7 @@ static void MX_GPIO_Init(void)
                           |LED_RED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, EN_0_Pin|EN_1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, EN_0_Pin|EN_1_Pin|EN_2_Pin|EN_3_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_RED_0_Pin|LED_YEL_0_Pin|LED_GRN_0_Pin|LED_RED_1_Pin
@@ -213,10 +213,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : SEG_0_Pin SEG_1_Pin SEG_2_Pin SEG_3_Pin
                            SEG_4_Pin SEG_5_Pin SEG_6_Pin SEG_7_Pin
-                           EN_0_Pin EN_1_Pin LED_RED_Pin */
+                           EN_0_Pin EN_1_Pin EN_2_Pin EN_3_Pin
+                           LED_RED_Pin */
   GPIO_InitStruct.Pin = SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin
                           |SEG_4_Pin|SEG_5_Pin|SEG_6_Pin|SEG_7_Pin
-                          |EN_0_Pin|EN_1_Pin|LED_RED_Pin;
+                          |EN_0_Pin|EN_1_Pin|EN_2_Pin|EN_3_Pin
+                          |LED_RED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
