@@ -6,7 +6,7 @@
  */
 #include "software_timer.h"
 
-#define TICK 10 // ms
+#define TICK 1 // ms
 
 struct TimerStruct timer[10];
 
