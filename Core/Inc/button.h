@@ -9,9 +9,7 @@
 #define INC_BUTTON_H_
 
 #include "main.h"
-
-#define NORMAL_STATE 0
-#define PRESSED_STATE 1
+#include "common.h"
 
 struct ButtonStruct
 {
@@ -24,6 +22,7 @@ struct ButtonStruct
 	uint16_t PIN;
 };
 
+extern struct ButtonStruct button0;
 extern struct ButtonStruct button1;
 extern struct ButtonStruct button2;
 
