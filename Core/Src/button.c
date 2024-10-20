@@ -7,26 +7,38 @@
 
 #include "button.h"
 
-struct ButtonStruct button1 =
+
+struct ButtonStruct button0 =
 {
 	{NORMAL_STATE, NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}, // keyBuffer
-	500, // timeOutForPressed
+	500, // timeOutForPressed = 500 * 20 ms = 10s
 	0, // isPressed
 	0, // isLongPressed
 	0, // flag
-	BUTTON_1_GPIO_Port,
-	BUTTON_1_Pin
+	BTN_0_GPIO_Port,
+	BTN_0_Pin
+};
+
+struct ButtonStruct button1 =
+{
+	{NORMAL_STATE, NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}, // keyBuffer
+	500, // timeOutForPressed = 500 * 20 ms = 10s
+	0, // isPressed
+	0, // isLongPressed
+	0, // flag
+	BTN_1_GPIO_Port,
+	BTN_1_Pin
 };
 
 struct ButtonStruct button2 =
 {
 	{NORMAL_STATE, NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}, // keyBuffer
-	500, // timeOutForPressed
+	500, // timeOutForPressed = 500 * 20 ms = 10s
 	0, // isPressed
 	0, // isLongPressed
 	0, // flag
-	BUTTON_2_GPIO_Port,
-	BUTTON_2_Pin
+	BTN_2_GPIO_Port,
+	BTN_2_Pin
 };
 
 void getKeyInput(struct ButtonStruct* button)
@@ -60,6 +72,7 @@ void getKeyInput(struct ButtonStruct* button)
 				{
 					// subKeyProcess();
 					button->flag = 1;
+					button->isLongPress = 1;
 				}
 			}
 		}
