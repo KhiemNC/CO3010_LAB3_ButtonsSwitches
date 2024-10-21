@@ -92,13 +92,23 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   init_traffic_light();
+  setTimer(TIMER_STATUS, TIME_STATUS);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  fsm_traffic_light();
+	  if (isFlag(TIMER_STATUS))
+	  {
+		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		  setTimer(TIMER_STATUS, TIME_STATUS);
+	  }
+
+	  if (1)
+	  {
+		  fsm_traffic_light();
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
