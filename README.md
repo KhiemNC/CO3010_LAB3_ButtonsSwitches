@@ -1,5 +1,5 @@
 
-# MICROCONTROLLER - MICROPROCESSOR, LABORATORY 2
+# MICROCONTROLLER - MICROPROCESSOR, LABORATORY 3
 
 This is the second lab to get familiar with Buttons & Switches through a big exercises focused on simulate a 2-WAYs-TRAFFIC-LIGHT.
 
