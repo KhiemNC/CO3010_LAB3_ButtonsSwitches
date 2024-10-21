@@ -7,7 +7,6 @@
 
 #include "button.h"
 
-
 struct ButtonStruct button0 =
 {
 	{NORMAL_STATE, NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}, // keyBuffer
@@ -56,7 +55,7 @@ void getKeyInput(struct ButtonStruct* button)
 
 			if (button->keyBuffer[3] == PRESSED_STATE)
 			{
-				button->timeOutForPressed = 500;
+				button->timeOutForPressed = TIME_OUT_FOR_LONG_PRESSED / TIME_READ_BTN;
 
 				// subKeyProcess();
 				button->flag = 1;
@@ -68,7 +67,7 @@ void getKeyInput(struct ButtonStruct* button)
 			--button->timeOutForPressed;
 			if (button->timeOutForPressed <= 0)
 			{
-				button->timeOutForPressed = 500;
+				button->timeOutForPressed = TIME_OUT_FOR_LONG_PRESSED / TIME_READ_BTN;
 				if (button->keyBuffer[3] == PRESSED_STATE)
 				{
 					// subKeyProcess();

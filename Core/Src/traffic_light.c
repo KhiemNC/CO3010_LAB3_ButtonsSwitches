@@ -402,6 +402,7 @@ void init_auto_red_yel()
 	set_on_4digits();
 	setTimer(TIMER_7SEG, TIME_7SEG);
 	setTimer(TIMER_1SEC, TIME_1SEC);
+	counter_way0 = yel_time;
 	counter_way1 = yel_time;
 	update_led_7seg_buffer();
 }
@@ -477,6 +478,7 @@ void init_auto_yel_red()
 	setTimer(TIMER_7SEG, TIME_7SEG);
 	setTimer(TIMER_1SEC, TIME_1SEC);
 	counter_way0 = yel_time;
+	counter_way1 = yel_time;
 	update_led_7seg_buffer();
 }
 void auto_yel_red()
@@ -585,10 +587,14 @@ void red_time_config()
 		if (isButtonPressed(&button1))
 		{
 			++red_temp_time;
-			if (red_temp_time > MAX_COUNTER)
-			{
-				red_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			red_temp_time += 5;
+		}
+		if (red_temp_time > MAX_COUNTER)
+		{
+			red_temp_time = MIN_COUNTER;
 		}
 
 		counter_way0 = red_temp_time;
@@ -635,10 +641,14 @@ void red_time_config_change()
 		if (isButtonPressed(&button1))
 		{
 			++red_temp_time;
-			if (red_temp_time > MAX_COUNTER)
-			{
-				red_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			red_temp_time += 5;
+		}
+		if (red_temp_time > MAX_COUNTER)
+		{
+			red_temp_time = MIN_COUNTER;
 		}
 
 		if (isButtonPressed(&button2))
@@ -706,10 +716,14 @@ void yel_time_config()
 		if (isButtonPressed(&button1))
 		{
 			++yel_temp_time;
-			if (yel_temp_time > MAX_COUNTER)
-			{
-				yel_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			yel_temp_time += 5;
+		}
+		if (yel_temp_time > MAX_COUNTER)
+		{
+			yel_temp_time = MIN_COUNTER;
 		}
 
 		counter_way0 = yel_temp_time;
@@ -756,10 +770,14 @@ void yel_time_config_change()
 		if (isButtonPressed(&button1))
 		{
 			++yel_temp_time;
-			if (yel_temp_time > MAX_COUNTER)
-			{
-				yel_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			yel_temp_time += 5;
+		}
+		if (yel_temp_time > MAX_COUNTER)
+		{
+			yel_temp_time = MIN_COUNTER;
 		}
 
 		if (isButtonPressed(&button2))
@@ -827,10 +845,14 @@ void grn_time_config()
 		if (isButtonPressed(&button1))
 		{
 			++grn_temp_time;
-			if (grn_temp_time > MAX_COUNTER)
-			{
-				grn_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			grn_temp_time += 5;
+		}
+		if (grn_temp_time > MAX_COUNTER)
+		{
+			grn_temp_time = MIN_COUNTER;
 		}
 
 		counter_way0 = grn_temp_time;
@@ -877,10 +899,14 @@ void grn_time_config_change()
 		if (isButtonPressed(&button1))
 		{
 			++grn_temp_time;
-			if (grn_temp_time > MAX_COUNTER)
-			{
-				grn_temp_time = MIN_COUNTER;
-			}
+		}
+		if (isButtonLongPressed(&button1))
+		{
+			grn_temp_time += 5;
+		}
+		if (grn_temp_time > MAX_COUNTER)
+		{
+			grn_temp_time = MIN_COUNTER;
 		}
 
 		if (isButtonPressed(&button2))

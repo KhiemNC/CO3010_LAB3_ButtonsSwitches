@@ -12,7 +12,7 @@
 
 // TRAFFIC LIGHT
 #define MIN_COUNTER 1
-#define MAX_COUNTER 20
+#define MAX_COUNTER 99
 
 // TIMER
 #define TIMER_READ_BTN 0
@@ -21,7 +21,7 @@
 #define TIMER_TRAFFIC_LIGHT 1
 
 #define TIMER_7SEG 2
-#define TIME_7SEG 250
+#define TIME_7SEG 5
 
 #define TIMER_7SEG_STATUS 3
 #define TIME_7SEG_STATUS 250
@@ -41,6 +41,7 @@
 // BUTTON
 #define NORMAL_STATE 1
 #define PRESSED_STATE 0
+#define TIME_OUT_FOR_LONG_PRESSED 500 // ms
 
 // LED CONTROL
 #define LED_ON 0
