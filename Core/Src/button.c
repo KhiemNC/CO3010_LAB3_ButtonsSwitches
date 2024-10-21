@@ -60,6 +60,7 @@ void getKeyInput(struct ButtonStruct* button)
 
 				// subKeyProcess();
 				button->flag = 1;
+				button->isPressed = 1;
 			}
 		}
 		else // button->keyBuffer[2] == button->keyBuffer[3]
@@ -81,9 +82,9 @@ void getKeyInput(struct ButtonStruct* button)
 
 int isButtonPressed(struct ButtonStruct* button)
 {
-	if (button->flag == 1)
+	if (button->isPressed == 1)
 	{
-		button->flag = 0;
+		button->isPressed = 0;
 		return 1;
 	}
 	return 0;
@@ -97,6 +98,12 @@ int isButtonLongPressed(struct ButtonStruct* button)
 		return 1;
 	}
 	return 0;
+}
+
+void resetButton(struct ButtonStruct* button)
+{
+	button->isPressed = 0;
+	button->isLongPress = 0;
 }
 
 void subKeyProcess(struct ButtonStruct* button)
