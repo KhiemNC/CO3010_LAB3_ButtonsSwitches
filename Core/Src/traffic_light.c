@@ -9,16 +9,6 @@
 
 enum TrafficLightState TRAFFIC_LIGHT_STATE = INIT;
 
-void init_traffic_light()
-{
-	setTimer(TIMER_READ_BTN, TIME_READ_BTN);
-
-	display_a_digit(0, 11);
-	display_a_digit(1, 11);
-	display_a_digit(2, 11);
-	display_a_digit(3, 11);
-}
-
 void fsm_traffic_light()
 {
 	switch (TRAFFIC_LIGHT_STATE) {
@@ -263,16 +253,6 @@ void fsm_traffic_light()
 		default:
 			break;
 	}
-
-	if (isFlag(TIMER_READ_BTN))
-	{
-		getKeyInput(&button0);
-		getKeyInput(&button1);
-		getKeyInput(&button2);
-
-		setTimer(TIMER_READ_BTN, TIME_READ_BTN);
-	}
-
 }
 
 void turn_red_on()

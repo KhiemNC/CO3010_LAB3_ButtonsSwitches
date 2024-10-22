@@ -34,7 +34,6 @@ enum TrafficLightState
 	YEL_BLINKY
 };
 
-void init_traffic_light();
 void fsm_traffic_light();
 
 void turn_red_on();

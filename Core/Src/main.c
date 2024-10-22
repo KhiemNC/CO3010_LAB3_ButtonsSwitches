@@ -91,24 +91,33 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-  init_traffic_light();
   setTimer(TIMER_STATUS, TIME_STATUS);
+  setTimer(TIMER_READ_BTN, TIME_READ_BTN);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if (isFlag(TIMER_STATUS))
-	  {
-		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  setTimer(TIMER_STATUS, TIME_STATUS);
-	  }
+	if (isFlag(TIMER_STATUS))
+	{
+	  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	  setTimer(TIMER_STATUS, TIME_STATUS);
+	}
 
-	  if (1)
-	  {
-		  fsm_traffic_light();
-	  }
+	if (isFlag(TIMER_READ_BTN))
+	{
+		getKeyInput(&button0);
+		getKeyInput(&button1);
+		getKeyInput(&button2);
+
+		setTimer(TIMER_READ_BTN, TIME_READ_BTN);
+	}
+
+	if (1)
+	{
+	  fsm_traffic_light();
+	}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
