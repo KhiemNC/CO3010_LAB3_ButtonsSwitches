@@ -17,7 +17,6 @@ struct ButtonStruct
 	int timeOutForPressed; // ms
 	int isPressed;
 	int isLongPress;
-	int flag;
 	GPIO_TypeDef *PORT;
 	uint16_t PIN;
 };

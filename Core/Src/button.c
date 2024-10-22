@@ -13,7 +13,6 @@ struct ButtonStruct button0 =
 	500, // timeOutForPressed = 500 * 20 ms = 10s
 	0, // isPressed
 	0, // isLongPressed
-	0, // flag
 	BTN_0_GPIO_Port,
 	BTN_0_Pin
 };
@@ -24,7 +23,6 @@ struct ButtonStruct button1 =
 	500, // timeOutForPressed = 500 * 20 ms = 10s
 	0, // isPressed
 	0, // isLongPressed
-	0, // flag
 	BTN_1_GPIO_Port,
 	BTN_1_Pin
 };
@@ -35,7 +33,6 @@ struct ButtonStruct button2 =
 	500, // timeOutForPressed = 500 * 20 ms = 10s
 	0, // isPressed
 	0, // isLongPressed
-	0, // flag
 	BTN_2_GPIO_Port,
 	BTN_2_Pin
 };
@@ -56,9 +53,6 @@ void getKeyInput(struct ButtonStruct* button)
 			if (button->keyBuffer[3] == PRESSED_STATE)
 			{
 				button->timeOutForPressed = TIME_OUT_FOR_LONG_PRESSED / TIME_READ_BTN;
-
-				// subKeyProcess();
-				button->flag = 1;
 				button->isPressed = 1;
 			}
 		}
@@ -70,8 +64,6 @@ void getKeyInput(struct ButtonStruct* button)
 				button->timeOutForPressed = TIME_OUT_FOR_LONG_PRESSED / TIME_READ_BTN;
 				if (button->keyBuffer[3] == PRESSED_STATE)
 				{
-					// subKeyProcess();
-					button->flag = 1;
 					button->isLongPress = 1;
 				}
 			}
@@ -103,11 +95,4 @@ void resetButton(struct ButtonStruct* button)
 {
 	button->isPressed = 0;
 	button->isLongPress = 0;
-}
-
-void subKeyProcess(struct ButtonStruct* button)
-{
-	// TODO
-	// HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-	button->flag = 1;
 }
