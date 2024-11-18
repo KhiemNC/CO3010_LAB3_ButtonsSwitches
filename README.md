@@ -1,7 +1,7 @@
 
 # MICROCONTROLLER - MICROPROCESSOR, LABORATORY 3
 
-This is the second lab to get familiar with Buttons & Switches through a big exercises focused on simulate a 2-WAYs-TRAFFIC-LIGHT.
+This is the third lab to get familiar with Buttons & Switches through a big exercises focused on simulate a 2-WAYs-TRAFFIC-LIGHT.
 
 
 ## 1. Schematic for this lab
